@@ -1,0 +1,61 @@
+  <!--components/me/me.wxml-->
+<view class="container">
+  <block wx:if="{{hasUserInfo}}">
+    <view class="user">
+      <view class="user-info">
+        <view class="name">{{userInfo.nickName}}</view>
+        <view class="gray">
+          <text class="address">{{userInfo.school}}</text>
+        </view>
+        <view class="user-edit">
+          <button class="btn-edit" bindtap="toedit">编辑</button>
+        </view>
+      </view>
+      <view class="user-avatar">
+        <image class="user-img" src="{{userInfo.avatarUrl}}" />
+      </view>
+    </view>
+
+    <block wx:for="{{itemlist}}" wx:key="item">
+      <view class="item" data-openId="{{userInfo.openId}}" data-target="{{item.itemname}}" bindtap="navTo">
+        <view >
+          <image class="item-img" src="{{item.itemimage}}" />
+          <text>{{item.itemtitle}}</text>
+        </view>
+        <view class="arrow"></view>
+      </view>
+    </block>
+
+
+  </block>
+  <block wx:else>
+    <view class="user">
+      <view class="user-info">
+        <view class="name">探索未知</view>
+        <view class="">
+          <button open-type="getUserInfo" class="btn" bindgetuserinfo="login" >登录/注册</button>
+        </view>
+      </view>
+      <view class="user-avatar">
+        <image class="user-img" src="/images/head.jpg" />
+      </view>
+    </view>
+    <block wx:for="{{itemlist}}" wx:key="item">
+      <view class="item" data-target="{{item.itemname}}" bindtap="navNotTo">
+        <view >
+          <image class="item-img" src="{{item.itemimage}}" />
+          <text>{{item.itemtitle}}</text>
+        </view>
+        <view class="arrow"></view>
+      </view>
+    </block>
+  </block>
+
+  <view class="item" data-target="about" bindtap="navTo">
+    <view>
+      <image class="item-img" src="/images/service.png" />
+      <text>联系我们</text>
+    </view>
+    <view class="arrow"></view>
+  </view>
+</view>

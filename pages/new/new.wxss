@@ -1,0 +1,38 @@
+/* pages/new/new.wxss */
+.form-container {
+  padding: 30rpx;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40rpx;
+  width: 100%;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.section-title {
+  font-size: 30rpx;
+}
+
+.section input {
+  width: 150px;
+  text-align: right;
+}
+
+.section textarea {
+  padding-top: 40rpx;
+  height: 100px;
+  width: 100%;
+}
+
+.section:last-child {
+  border: none;
+}
+
+.btn-area {
+  padding-top: 40rpx;
+
+}

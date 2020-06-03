@@ -1,0 +1,109 @@
+/* components/task/task.wxss */
+.task-container {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 25rpx;
+  border-bottom: #000 1px;
+  background-color: rgb(209, 232, 253);
+  border-radius: 5%;
+}
+
+.head {
+  padding: 20rpx 0rpx 10rpx 15rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar {
+  padding-left: 20rpx;
+}
+
+.avatar .head-img {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.avatar-info {
+  padding-left: 30rpx;
+}
+
+.avatar-info .name {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #000;
+}
+
+.avatar-info .gray {
+  padding-top: 10rpx;
+  font-size: 25rpx;
+  color: rgb(167, 166, 166);
+}
+
+.avatar-info .gray .address {
+  margin-left: 5rpx;
+}
+
+.tab {
+  position: relative;
+  padding-left: 60rpx;
+}
+.tab-imag {
+  width: 130rpx;
+  height: 65rpx;
+}
+
+.tab-content {
+  position: absolute;
+  left:40px;
+  top:6px;
+  font-size: 14px;
+}
+.task-content {
+  margin: 0rpx 10rpx 20rpx 30rpx;
+  border: 1px solid #ddd;
+  border-radius: 8%;
+  width: 90%;
+  height: 70%;
+  background-color: #fff;
+}
+
+.task-content .task-head {
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx 40rpx 20rpx 40rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-head .task-title {
+  display: inline-block;
+  vertical-align:middle;
+}
+
+.task-content .task-info {
+  margin: 20rpx 20rpx 20rpx 40rpx;
+}
+
+.task-info .address {
+  font-size: 25rpx;
+  margin-bottom: 10rpx;
+}
+
+.task-info .task-img {
+  vertical-align:middle;
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 20rpx;
+}
+
+.task-info .address .position {
+  padding-right: 20rpx;
+  color: #666;
+}
+
+.task-info .remark {
+  font-size: 14px;
+  color: #666;
+}

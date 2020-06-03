@@ -1,0 +1,38 @@
+<view class="container">
+  <view class="form-container">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section" bindtap="changAvatar">
+          <text class="section-title">头像</text>     
+          <view>
+            <image class="avatar" src="{{user.avatarUrl}}" bindtap='changeAvatar'/>
+          </view>
+        </view>
+        <view class="section">
+          <text class="section-title">昵称</text>
+          <input name="nickName" placeholder="{{user.nickName}}" value="{{user.nickName}}"/>
+        </view>
+        <view class="section">
+          <text class="section-title">性别</text>
+          <block wx:if="{{user.gender}}==1">
+            <input name="gender" placeholder="男" disabled="{{true}}" value="男"/>
+          </block>
+          <block wx:else>
+            <input name="gender" placeholder="女" disabled="{{true}}" value="女"/>
+          </block>
+        </view>
+        <view class="section">
+          <text class="section-title">学校</text>
+          <input name="school" placeholder="{{user.school}}" disabled="{{true}}" value="{{user.school}}"/>
+        </view>
+        <view class="section">
+          <text class="section-title">电话</text>
+          <input name="grade" placeholder="{{user.telephone}}" disabled="{{true}}" value="{{user.grade}}"/>
+        </view>
+        <view class="warm">
+          <image class="warm-img" src="/images/warm.png" />
+          <text class="gray">性别、学校、年级等信息若需要修改请联系客服</text>
+        </view>
+      <button class="btn" formType="submit">提交</button>
+  </form>
+  </view>
+</view>

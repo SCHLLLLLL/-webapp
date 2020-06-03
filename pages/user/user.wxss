@@ -1,0 +1,60 @@
+/* pages/new/new.wxss */
+
+.form-container {
+  padding: 20rpx;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.section-title {
+  font-size: 30rpx;
+}
+
+.section input {
+  width: 150px;
+  text-align: right;
+}
+
+.section textarea {
+  padding-top: 40rpx;
+  height: 100px;
+  width: 100%;
+}
+
+.section:last-child {
+  border: none;
+}
+
+.warm {
+  margin-top: 20rpx;
+}
+
+.warm-img {
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.gray {
+  font-size: 25rpx;
+  color: rgb(167, 166, 166);
+}
+
+.btn {
+  margin-top: 20px;
+  width: 150px;
+  font-size: 15px;
+}

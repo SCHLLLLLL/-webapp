@@ -1,0 +1,3 @@
+.container {
+    padding: 40rpx 50rpx 0 50rpx;
+}

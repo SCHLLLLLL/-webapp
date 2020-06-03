@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="form-container">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <input hidden="true" name="openId" value="{{user.openId}}"></input>
+      <view class="section" bindtap="changAvatar">
+        <text class="section-title">头像</text>
+        <view>
+          <image class="avatar" src="{{user.avatarUrl}}" bindtap='changeAvatar' />
+        </view>
+      </view>
+      <view class="section">
+        <text class="section-title">昵称</text>
+        <input name="nickname" placeholder="{{user.nickName}}" disabled="{{true}}" value="{{user.nickName}}"/>
+      </view>
+      <view class="section">
+        <text class="section-title">性别</text>
+        <input wx:if="{{user.gender==1}}" name="gender" placeholder="{{user.gender}}" disabled="{{true}}" value="男" />
+        <input wx:if="{{user.gender==0}}" name="gender" placeholder="{{user.gender}}" disabled="{{true}}" value="女" />
+      </view>
+      <view class="section">
+        <text class="section-title">姓名</text>
+        <input name="name" placeholder="{{user.phone}}" placeholder="填写真实姓名" />
+      </view>
+      <view class="section">
+        <text class="section-title">手机号</text>
+        <input name="phone" placeholder="{{user.phone}}" placeholder="填写本人的手机号" />
+      </view>
+      <view class="section">
+        <text class="section-title">学校</text>
+        <input name="school" placeholder="填写所在学校" />
+      </view>
+      <button class="btn" formType="submit">注册</button>
+    </form>
+  </view>
+</view>

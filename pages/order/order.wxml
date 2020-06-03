@@ -1,0 +1,123 @@
+<!--pages/order/order.wxml-->
+<wxs src="../../utils/util.wxs" module="util" />
+<view class="container">
+  <view class="promulagtor">
+    <view class="avatar">
+      <image class="head-img" src="{{order.user.avatarUrl}}"></image>
+    </view>
+    <view class="avatar-info">
+
+      <view class="name">{{order.user.nickName}}</view>
+
+      <view class="gray">
+        <text class="time">{{util.formateTime(order.createTime)}}</text>
+        <text class="address">{{order.user.school}}</text>
+      </view>
+    </view>
+
+    <button class="btn-choose" wx:if="{{flag==1||flag==2&&order.state!=2}}" bindtap="changeTap">••</button>
+    <action-sheet hidden="{{actionSheetHidden}}" bindchange="changeTap">
+      <block wx:for="{{actionSheetItems}}" wx:key="item">
+        <action-sheet-item bindtap="click{{item}}">
+          {{item}}
+        </action-sheet-item>
+      </block>
+      <action-sheet-cancel>取消</action-sheet-cancel>
+    </action-sheet>
+
+  </view>
+
+
+  <view class="task-content">
+    <view class="task-head">
+      <view>
+        <text class="task-promulagtor">{{order.name}}</text>
+        <text id="phone" class="phone">{{util.toHide(order.user.telephone)}}</text>
+      </view>
+    </view>
+    <view class="task-info">
+      <view class="task-count">
+        <text>件数</text>
+        <text id="count">{{order.count}}</text>
+        <text>件</text>
+      </view>
+      <view class="address">
+        <text class="position">取件地点</text>
+        <text>{{order.takeAdd}}</text>
+      </view>
+      <view class="address">
+        <text class="position">送达地点</text>
+        <text>{{order.sendAdd}}</text>
+      </view>
+      <view class="remark">
+        <text>备注：</text>
+        <text>{{order.remark}}</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="task-state">
+    <text>任务状态</text>
+    <view class="order_process">
+      <view class='process_wrap' wx:for="{{processData}}" wx:key="item">
+        <view class='process'>
+          <view class='process_line' style="background:{{item.start}}"></view>
+          <image class='process_icon' src="{{item.icon}}"></image>
+          <view class='process_line' style="background:{{item.end}}"></view>
+        </view>
+        <text class='process_name'>{{item.name}}</text>
+      </view>
+    </view>
+
+
+  </view>
+
+  <!-- 订单状态为0 -->
+  <view class="" wx:if="{{order.state==0&&flag!=1}}">
+    <button class="btn-accpect" bindtap="accOrder" data-orderId="{{order.id}}">接单</button>
+  </view>
+
+
+  <view class="person" wx:if="{{flag==1&&order.accUser!=null}}">
+    <text>接单同学</text>
+    <view class="accpecter">
+      <view class="avatar">
+        <image class="head-img" src="{{order.accUser.avatarUrl}}"></image>
+      </view>
+      <view class="avatar-info">
+        <view class="name">{{order.accUser.name}}</view>
+        <view class="gray">
+          <text>{{util.formateTime(order.accpectTime)}}</text>
+          <text class="address">{{order.accUser.school}}</text>
+        </view>
+      </view>
+      <view class="phonebtn" bindtap="call" data-telephone="{{order.accUser.telephone}}">
+        <image class="phonebtn-img" src="/images/phone.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="person" wx:if="{{flag==0||flag==2}}">
+    <text>发单同学</text>
+    <view class="accpecter">
+      <view class="avatar">
+        <image class="head-img" src="{{order.user.avatarUrl}}"></image>
+      </view>
+      <view class="avatar-info">
+        <view class="name">{{order.user.nickName}}</view>
+        <view class="gray">
+          <text>{{util.formateTime(order.createTime)}}</text>
+          <text class="address">{{order.user.school}}</text>
+        </view>
+      </view>
+      <view class="phonebtn" bindtap="call" data-telephone="{{order.user.telephone}}" wx:if="{{!flag==0||!flag==3}}">
+        <image class="phonebtn-img" src="/images/phone.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{flag==2&&order.accUser!=null&&order.state!=2}}">
+    <button class="btn-complete" bindtap="completeOrder" data-orderId="{{order.id}}">完成</button>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+var formateTime = function (date) {
+  var date = getDate(date); //返回当前时间对象
+  var year = date.getFullYear()
+  year = year<10?'0'+year:year;
+  var month = date.getMonth() + 1
+  month  = month  < 10 ? '0' + month  : month;
+  var day = date.getDate()
+  day = day < 10 ? '0' + day : day;
+
+  return [year, month, day].join('-')
+}
+var toHide = function (array) {
+  if(array!=null){
+    var mphone = array.substring(0, 3) + '****' + array.substring(7);
+  }
+  return mphone;
+}
+module.exports = {
+  formateTime: formateTime,
+  toHide: toHide
+}

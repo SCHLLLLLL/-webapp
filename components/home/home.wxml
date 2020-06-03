@@ -1,0 +1,12 @@
+<view class="container">
+  <swiper class="adv-swiper" indicator-dots="{{true}}" autoplay="true">
+    <block wx:for="{{advs}}" wx:key="item">
+      <swiper-item class="swiperItem">
+        <view>
+          <image class="advs-img" src="{{item.img}}"></image>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <task list="{{orderList}}"></task>
+</view>

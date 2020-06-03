@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/new/new",
+    "pages/user/user",
+    "pages/approve/approve",
+    "pages/myorder/myorder",
+    "pages/myput/myput",
+    "pages/wallet/wallet",
+    "pages/about/about",
+    "pages/order/order",
+    "pages/register/register",
+    "pages/error/error"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "HelpE",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

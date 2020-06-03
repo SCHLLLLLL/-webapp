@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="form-container">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view>
+        <view class="section">
+          <text class="section-title">姓名</text>
+          <input name="name" placeholder="请输入姓名" />
+        </view>
+        <view class="section">
+          <text class="section-title">电话</text>
+          <input name="phone" placeholder="请输入电话" />
+        </view>
+        <view class="section">
+          <text class="section-title">取件地址</text>
+          <input name="takeadd" placeholder="请输入取件地址" />
+        </view>
+        <view class="section">
+          <text class="section-title">送件地址</text>
+          <input name="sendadd" placeholder="请输入送件地址" />
+        </view>
+        <view class="section">
+          <text class="section-title">件数</text>
+          <input name="count" placeholder="请输入件数" />
+        </view>
+        <view class="section">
+          <text class="section-title">订单信息</text>
+          <textarea name="remark" placeholder="准确的取件信息或其他需求是任务的关键！" />
+        </view>
+        <view class="btn-area">
+          <button form-type="submit">下单</button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

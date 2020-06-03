@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "task": "/components/task/task"
+  },
+  "navigationBarTitleText": "我的发布"
+  
+}

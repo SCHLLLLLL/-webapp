@@ -1,0 +1,4 @@
+<!--pages/myput/myput.wxml-->
+<view class="container">
+    <task list="{{orderList}}" hidden="false"></task>
+</view>

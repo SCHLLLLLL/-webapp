@@ -1,0 +1,49 @@
+<wxs src="../../utils/util.wxs" module="util" />
+<!--components/task/task.wxml-->
+  <view class="task-container" bindtap="gotodetail" wx:for="{{list}}" wx:key="item" data-id="{{item.id}}">
+    <view class="head">
+      <view class="avatar">
+        <image class="head-img" src="{{item.user.avatarUrl}}"></image>
+      </view>
+      <view class="avatar-info">
+        <view class="name">{{item.user.nickName}}</view>
+        <view class="gray">
+          <text class="time">{{util.formateTime(item.createTime)}}</text>
+          <text class="address">{{item.user.school}}</text>
+        </view>
+      </view>
+      <view class="tab">
+        <image class="tab-imag" src="/images/tab.png" />
+        <view class="tab-content">
+          <text wx:if="{{item.state==0}}">新发布</text>
+          <text wx:if="{{item.state==1}}">已接单</text>
+          <text wx:if="{{item.state==2}}">已完成</text>
+        </view>
+      </view>
+    </view>
+    <view class="task-content">
+      <view class="task-head">
+        <view class="task-title">
+          <text>取快递</text>
+          <text id="count">{{item.count}}</text>
+          <text>件</text>
+        </view>
+      </view>
+      <view class="task-info">
+        <view class="address">
+          <image class="task-img" src="/images/paperplane.png"></image>
+          <text class="position">取件地点</text>
+          <text>{{item.takeAdd}}</text>
+        </view>
+        <view class="address">
+          <image class="task-img" src="/images/address.png"></image>
+          <text class="position">送达地点</text>
+          <text>{{item.sendAdd}}</text>
+        </view>
+        <view class="remark" hidden="{{hidden}}">
+          <text>备注：</text>
+          <text>{{item.remark}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
